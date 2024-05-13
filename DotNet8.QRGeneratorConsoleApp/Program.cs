@@ -11,7 +11,7 @@ if (!Directory.Exists(folderPath))
     Directory.CreateDirectory(folderPath);
 }
 
-var fileName = Path.Combine(folderPath, data + "_" + "QRCode.png");
+string fileName = Path.Combine(folderPath, data + "_" + "QR.png");
 qrCodeImage.Save(fileName, ImageFormat.Png);
 
 DisplayQRCodeImage(fileName);
