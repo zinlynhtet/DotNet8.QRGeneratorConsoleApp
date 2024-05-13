@@ -1,9 +1,4 @@
-﻿using System.Diagnostics;
-using System.Drawing;
-using System.Drawing.Imaging;
-using QRCoder;
-
-Console.WriteLine("Enter the data to encode in the QR code:");
+﻿Console.WriteLine("Enter the data to encode in the QR code:");
 var data = Console.ReadLine()!;
 var  qrGenerator = new QRCodeGenerator();
 var qrCodeData = qrGenerator.CreateQrCode(data, QRCodeGenerator.ECCLevel.Q);
@@ -16,7 +11,7 @@ if (!Directory.Exists(folderPath))
     Directory.CreateDirectory(folderPath);
 }
 
-string fileName = Path.Combine(folderPath, data + "_" + "QRCode.png");
+var fileName = Path.Combine(folderPath, data + "_" + "QRCode.png");
 qrCodeImage.Save(fileName, ImageFormat.Png);
 
 DisplayQRCodeImage(fileName);
